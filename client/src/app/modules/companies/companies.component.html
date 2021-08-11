@@ -1,0 +1,24 @@
+
+<mat-card class="companies-list-card" style="text-align: center;">
+
+        <mat-card-title>Your Companies</mat-card-title>
+   
+
+    <div class="no-threads-container" *ngIf="companies.length == 0; else threadListContainer">
+        <div class="no-threads-header unselectable">
+            <i>No owned companies</i>
+        </div>
+    </div>
+
+    <ng-template class="thread-list-container" #threadListContainer>
+        <div class="company-label-container"  *ngFor="let company of this.companies">
+            <label>
+                {{company.companyName}}
+            </label>
+        </div>
+        
+    </ng-template>
+
+    <br>
+    <button mat-raised-button class="form-control" color="accent" (click)="onRegisterNewCompany()">Register a company account</button>
+</mat-card>

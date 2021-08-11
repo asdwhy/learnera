@@ -1,0 +1,25 @@
+.video-category-container {
+	display: flex; /* or inline-flex */
+	justify-content: space-between;
+	margin:1cm 10px;
+	flex-basis: auto;
+	row-gap: 4cm;
+	flex-wrap:wrap;
+	display: block;
+	margin-bottom: 1cm;
+	cursor: pointer;
+}
+
+.title {
+	font-size:large;
+	line-height: 1.6;
+}
+
+.video-create{
+    margin-top:10px;
+    float:right;
+    margin-right:2.6%;
+    height: 50px;
+    width: 200px;
+    font-size: 25px;
+}

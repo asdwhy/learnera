@@ -1,0 +1,30 @@
+<div *ngIf="video == null" class ="no-video-found">
+    <div class="no-video-header unselectable">
+        <i>No learning video found</i>
+    </div>
+</div>
+<div *ngIf="video != null">
+    <mat-card class="video-card">
+        <br>
+        <app-user-identity [title]="video.title" [date]="video.date" [userName]="userName" [profileImageUrl]="profileImageUrl"></app-user-identity>
+        <div class="youtube-player-wrapper">
+            <iframe
+                [src]="('https://www.youtube.com/embed/' + (this.video.url | youtubeId)) | safe"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <br>
+        <mat-card-content>
+        <p>
+            {{video.body}}
+        </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color={{currColor}} (click)="onLike()"><mat-icon>thumb_up</mat-icon> {{video.likes}}</button>
+        </mat-card-actions>
+        <br>
+        <app-comments [id]="this.vid"></app-comments>
+    </mat-card>
+</div>

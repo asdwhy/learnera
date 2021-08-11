@@ -1,0 +1,33 @@
+<h1 class="comment-section-title">Comments</h1>
+
+<div>
+<mat-form-field class="comment-input" appearance="fill">
+    <mat-label>Enter comment: </mat-label>
+    <input matInput [(ngModel)]="this.body">
+  </mat-form-field>
+  <div class="post-comment-btn">
+    <button mat-raised-button color="accent" (click)="postComment()" [disabled] = "!this.body">Post Comment</button>
+  </div>
+</div>
+
+<br>
+<br>
+<div class="no-comments-container" *ngIf="comments.length == 0; else commentListContainer">
+  <div class="no-comments-header unselectable">
+    <i>No comments yet. Be the first to comment on this thread!</i>
+  </div>
+</div>
+<ng-template class="ng-template-comment-container" #commentListContainer>
+  <div class="comment-list-container" *ngFor="let comment of comments">
+
+    <div class="comment-container">
+      <div class="identity-container">
+        <img mat-card-avatar [src]="comment.profileImageUrl" alt="Not Found">
+        <label class="comment-info" > {{comment.comment.displayName}} commented:</label>
+      </div>
+      <br>
+      <label class="comment-content">{{comment.comment.body}}</label>
+    </div>
+    <div class="line"></div>
+  </div>
+</ng-template>

@@ -1,0 +1,16 @@
+<div class="no-videos-container" *ngIf="videos.length == 0; else videoListContainer">
+    <div class="no-videos-header unselectable">
+        <i>No learning videos found</i>
+    </div>
+</div>
+<ng-template class="video-list-container" #videoListContainer>
+    <br>
+    <mat-card class="video-list-item-card" *ngFor="let vid of videos" (click)="selectVideo(vid)">
+        
+        <img class="thumbnail" mat-card-image src="https://img.youtube.com/vi/{{vid.url | youtubeId}}/mqdefault.jpg" alt="Photo of a Shiba Inu">
+        <div class="content">
+            <mat-card-title>{{vid.title}}</mat-card-title>
+            <mat-card-content class="video-list-item-card-content">{{vid.body}}</mat-card-content>
+        </div>
+    </mat-card>
+</ng-template>

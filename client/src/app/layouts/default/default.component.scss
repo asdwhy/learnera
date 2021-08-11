@@ -1,0 +1,35 @@
+@import "vars.scss";
+
+.default-layout-container {
+    display:block;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: rgb(242,242,242);
+
+    app-header {
+        border-bottom: 1px solid black;
+        height: $header-height;
+    }
+
+    .lower-container {
+        display: inline;
+        width: 100%;
+        position: fixed;
+
+        .sidebar-container {
+            width: 15vw;
+            height: 100%;
+            position: fixed;
+        }
+
+        .content {
+            overflow-y: auto;
+            overflow-x: hidden;
+            width: 85vw;
+            position: fixed;
+            height: calc(100vh - #{$header-height});
+            left: 15vw;
+        }
+    }
+}

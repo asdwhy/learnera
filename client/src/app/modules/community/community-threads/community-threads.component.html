@@ -1,0 +1,16 @@
+<button mat-raised-button class="thread-create" color="accent" (click)="showCreateThreadForm()" >Create Thread</button>
+<br>
+<br>
+<br>
+<div class="no-threads-container" *ngIf="tmpThreads.length == 0; else threadListContainer">
+    <div class="no-threads-header unselectable">
+        <i>No community threads found</i>
+    </div>
+</div>
+<ng-template class="thread-list-container" #threadListContainer>
+    <br>
+    <mat-card class="thread-list-item-card" *ngFor="let thread of tmpThreads" (click)="selectThread(thread)">
+        <mat-card-title>{{thread.title}}</mat-card-title>
+        <mat-card-content class="thread-list-item-card-content">{{thread.body}}</mat-card-content>
+    </mat-card>
+</ng-template>

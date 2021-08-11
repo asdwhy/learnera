@@ -1,0 +1,17 @@
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->
+<div mat-dialog-content>
+  <app-required-label [value]="'Enter the title of the post'"></app-required-label>
+  <mat-form-field class="title-input-form" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="content.title">
+  </mat-form-field>
+  <app-required-label [value]="'Enter the body of the post'"></app-required-label>
+  <mat-form-field class="body-input-form" appearance="fill">
+    <mat-label>Body</mat-label>
+    <textarea matInput class="body-input" [(ngModel)]="content.body"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="content" cdkFocusInitial [disabled] = "!content.body || !content.title" >Ok</button>
+</div>

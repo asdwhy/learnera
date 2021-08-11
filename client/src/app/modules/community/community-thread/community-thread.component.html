@@ -1,0 +1,22 @@
+<div *ngIf="thread == null" class="no-thread-found">
+  <div class="no-thread-header unselectable">
+    <i>No community threads found</i>
+  </div>
+</div>
+<div *ngIf="thread != null">
+  <mat-card class="thread-card">
+    <br>
+    <app-user-identity [date]="thread.date" [title]="thread.title" [userName]="userName" [profileImageUrl]="profileImageUrl"></app-user-identity>
+    <mat-card-content>
+      <p class="thread-body">
+        {{thread.body}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button color={{currColor}} (click)="onLike()"><mat-icon>thumb_up</mat-icon> {{thread.likes}}</button>
+    </mat-card-actions>
+    <br>
+
+    <app-comments [id]="this.tid"></app-comments>
+  </mat-card>
+</div>

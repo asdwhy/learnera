@@ -1,0 +1,33 @@
+.no-threads-container {
+    .no-threads-header {
+        display: flex;
+        justify-content: center;
+        margin-top: 23%;
+
+        i {
+            color: rgb(128,128,128);
+        }
+    }
+}
+
+.thread-list-item-card {
+    margin-left: 10px;
+    margin-right: 10px;
+    word-wrap: break-word;
+    cursor: pointer;
+    // size: 5;
+}
+
+.thread-list-item-card:not(:first-child) {
+    margin-bottom:20px;
+}
+
+.thread-create{
+    margin-top:10px;
+    float:right;
+    margin-right:2.6%;
+    height: 50px;
+    width: 200px;
+    font-size: 25px;
+}
+

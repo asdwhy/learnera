@@ -1,0 +1,14 @@
+<button mat-raised-button class="video-create" color="accent" (click)="showUploadVideoForm()" >Create Video</button>
+<br>
+<br>
+<br>
+<div>
+	<div class ="video-category-container" (click)="selectCategory('All')">
+		<mat-card><mat-card-title class="title" >All</mat-card-title></mat-card>
+	</div>
+	<div class="video-category-container" *ngFor="let category of categories" (click)="selectCategory(category)">
+		<mat-card>
+			<mat-card-title class="title">{{category.name}}</mat-card-title>
+		</mat-card>
+	</div>
+</div>

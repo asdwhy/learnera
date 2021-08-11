@@ -1,0 +1,19 @@
+<button mat-raised-button class="conference-create" color="accent" (click)="showCreateConferenceForm()" >Create Conference</button>
+<br>
+<br>
+<br>
+<br>
+<div class="no-conferences-container" *ngIf="conferences.length == 0; else conferenceListContainer">
+	<div class="no-conferences-header unselectable">
+	    <i>No Conferences Found</i>
+	</div>
+    </div>
+    <ng-template class="conference-list-container" #conferenceListContainer>
+	<div *ngFor="let conference of conferences" (click)="onSelect(conference)">
+	    <br>
+	    <mat-card class="conference-list-item-card">
+	    <mat-card-title>{{conference.title}} - {{conference.date | date}}</mat-card-title>
+	    <mat-card-content class="conference-list-item-card-content">{{conference.title}} - {{conference.zoomLink}}</mat-card-content>
+	</mat-card>
+	</div>
+    </ng-template>

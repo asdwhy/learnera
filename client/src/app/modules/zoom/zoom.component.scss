@@ -1,0 +1,116 @@
+@import "vars.scss";
+
+
+$width: 98vw;
+$welcome-height: 100px;
+$row-height: calc(100vh - #{$welcome-height} - 3vh);
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    padding: 0 25px;
+    line-height: 90px;
+}
+
+.subtitle {
+    color: white;
+    padding: 0 25px;
+}
+
+.mat-icon {
+    transform:scale(1.5)
+}
+
+.welcome {
+    margin: 1vh 1vw;
+
+    cursor: default;
+    
+    width: $width;
+    height: $welcome-height;
+
+    .title {
+        font-size: 2em;
+        height: 2em;
+    }
+
+    
+    .back-anchor-container {
+        cursor: pointer;
+        margin:  0 25px;
+        color: white;
+
+        .icon {
+            position: relative;
+            top: 0.3em;
+            right: -10px;
+        }
+
+        .back-anchor {
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.content {
+    display: block;
+    margin-left: 1vw;
+    margin-right: 1vw;;
+    width: $width;
+
+    .row {
+        display: flex;
+        margin: auto;
+
+        .rectangle {
+            width: calc(#{$width} / 2); 
+            height: $row-height;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            cursor: pointer;
+
+            .title {
+                cursor: pointer;
+            }
+        }   
+
+        .col1 {
+            margin-right: 0.25vw;
+        }
+
+        .col2 {
+            margin-left: 0.25vw;
+        }
+    }
+}
+
+.rectangle {
+    display: block;
+    position: relative;
+    background-color: #4fa4fa;
+    overflow: hidden;
+
+    .icon-wrapper {
+        margin:  0 25px;
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        right: 15px;
+
+        .icon {
+            transform: scale(5);
+        }
+    }
+}
+
+.rectangle.disabled {
+    background-color: gray;
+    opacity: 0.5;
+    cursor: default !important;
+
+    .title {
+        cursor: default !important;
+    }
+}

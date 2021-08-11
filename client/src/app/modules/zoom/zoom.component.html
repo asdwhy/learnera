@@ -1,0 +1,26 @@
+<div class="rectangle welcome">
+    <label class="title">Join a zoom conference</label>
+    <div class="back-anchor-container" (click)="routeHome()">
+        <label class="back-anchor">Back to home</label>
+        <mat-icon class="icon">arrow_right_alt</mat-icon>
+    </div>
+</div>
+  
+<div class="content">
+    <div class="row">
+        <div class="rectangle col1" [class.disabled]="isJoinWithAccountDisabled()" (click)="onJoinWithAccount()">
+            <label class="title">Join with your zoom account</label>
+            <label class="subtitle" *ngIf="isJoinWithAccountDisabled()" [ngClass]="isJoinWithAccountDisabled() ? 'disabled' : ''">This feature is disabled for this zoom conference</label>
+            <div class="icon-wrapper">
+                <mat-icon class="icon">arrow_right_alt</mat-icon>
+            </div>
+        </div>
+        <div class="rectangle col2" (click)="getSignature()">
+            <label class="title">Join without an account</label>
+            <div class="icon-wrapper">
+                <mat-icon class="icon">arrow_right_alt</mat-icon>
+            </div>
+        </div>
+    </div>
+</div>
+  

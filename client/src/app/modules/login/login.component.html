@@ -1,0 +1,31 @@
+
+<!-- <style>
+  body {
+    background-image: url('https://blog.prezi.com/wp-content/uploads/2019/03/jason-leung-479251-unsplash.jpg');
+  }
+</style> -->
+
+<mat-card class="login-card">
+  <mat-card-title>Login</mat-card-title>
+  <div class="line"></div>
+
+    <form class="login-form" #userForm="ngForm">
+        
+        <div class="form-field username-field">
+          <mat-label>Username:</mat-label>
+          <input type="username" placeholder="Required" [(ngModel)]="loggingInUser.username" name="username" required>
+        </div>
+
+        <div class="form-field password-field">
+            <mat-label>Password:</mat-label>
+            <input type="password" placeholder="Required" [(ngModel)]="loggingInUser.password" name="password" required>
+        </div>
+      
+      </form>  
+      <br>
+      <a class='register-button' href="auth/register">Don't have an account? Sign up!</a>
+      <br>
+      <br>
+      <button mat-raised-button class="form-control" color="accent" (click)="onLogin()">Login</button>
+</mat-card>
+

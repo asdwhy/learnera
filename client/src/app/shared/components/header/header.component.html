@@ -1,0 +1,22 @@
+<div class = "header-container" flexLayout = "row">
+    <b fxFlex = "10">Learnera</b>
+    <mat-form-field fxFlex = "84" class="search-container" appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput type="search" [(ngModel)]="searchTextVal" (ngModelChange)="searchText($event)">
+        
+        <button *ngIf="searchTextVal" matSuffix mat-icon-button aria-label="Clear" (click)="clearText()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="menu-container">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="onClickAccount()">Account</button>
+          <button mat-menu-item (click)="onClickLogout()">Logout</button>
+        </mat-menu>
+      </div>
+</div>
+

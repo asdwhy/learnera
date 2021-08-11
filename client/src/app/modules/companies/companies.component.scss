@@ -1,0 +1,10 @@
+$width: 500px;
+
+:host {
+    width: $width;
+}
+
+.companies-list-card {
+    width: $width;
+    margin:auto;
+}

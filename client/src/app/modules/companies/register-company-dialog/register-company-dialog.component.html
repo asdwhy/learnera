@@ -1,0 +1,58 @@
+<div mat-dialog-content>
+    <app-required-label [value]="'Company Name'"></app-required-label>
+    <mat-form-field class="title-input-form" appearance="fill">
+      <mat-label>Company Name</mat-label>
+      <input matInput [(ngModel)]="content.companyName">
+    </mat-form-field>
+
+    <app-required-label [value]="'Username (for login)'"></app-required-label>
+    <mat-form-field class="title-input-form" appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="content.username">
+    </mat-form-field>
+
+    <app-required-label [value]="'Password (for login)'"></app-required-label>
+    <mat-form-field class="title-input-form" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="content.password">
+    </mat-form-field>
+
+    <app-required-label [value]="'Address'"></app-required-label>
+    <mat-form-field class="title-input-form" appearance="fill">
+        <mat-label>Line 1</mat-label>
+        <input matInput [(ngModel)]="content.address.line1">
+    </mat-form-field>
+    <mat-form-field class="title-input-form" appearance="fill">
+        <mat-label>City</mat-label>
+        <input matInput [(ngModel)]="content.address.city">
+    </mat-form-field>
+    <mat-form-field class="title-input-form" appearance="fill">
+        <mat-label>Province</mat-label>
+        <input matInput [(ngModel)]="content.address.province">
+    </mat-form-field>
+    <mat-form-field class="title-input-form" appearance="fill">
+        <mat-label>Postal Code</mat-label>
+        <input matInput [(ngModel)]="content.address.postalCode">
+    </mat-form-field>
+    <mat-form-field class="title-input-form" appearance="fill">
+        <mat-label>Country</mat-label>
+        <input matInput [(ngModel)]="content.address.country">
+    </mat-form-field>
+
+    <mat-label>Website</mat-label>
+    <mat-form-field class="title-input-form" appearance="fill">
+      <mat-label>Website</mat-label>
+      <input matInput [(ngModel)]="content.website">
+    </mat-form-field>
+
+    <mat-label>Phone</mat-label>
+    <mat-form-field class="title-input-form" appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="content.phone">
+    </mat-form-field>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="content" [disabled] ="!content.companyName || !content.username || !content.password || !content.address.line1 || !content.address.city || !content.address.postalCode || !content.address.country">Ok</button>
+  </div>

@@ -1,0 +1,30 @@
+<mat-card class="register-card">
+    
+    <mat-card-title>Register</mat-card-title>
+    <div class="line"></div>
+
+    <form class="register-form" #userForm="ngForm">
+        <div class="form-field name-field">
+            <mat-label>First Name:</mat-label>
+            <input type="text" placeholder="Required" [(ngModel)]="registerUser.firstName" name="firstName" required>
+        </div>
+        <div class="form-field name-field">
+            <mat-label>Last Name:</mat-label>
+            <input type="text" placeholder="Required" [(ngModel)]="registerUser.lastName" name="lastName" required>
+        </div>
+        <div class="form-field username-field">
+          <mat-label>Username:</mat-label>
+          <input type="username" placeholder="Required" [(ngModel)]="registerUser.username" name="username" required>
+        </div>
+
+        <div class="form-field password-field">
+            <mat-label>Password:</mat-label>
+            <input type="password" placeholder="Required" [(ngModel)]="registerUser.password" name="password" required>
+        </div>
+      </form>  
+      <br>  
+      <a class="login-button" href="auth/login">Already have an account? Log in!</a>
+      <br>
+      <br>
+      <button mat-raised-button class="form-control" color="accent" (click)="onRegister()">Register</button>
+</mat-card>

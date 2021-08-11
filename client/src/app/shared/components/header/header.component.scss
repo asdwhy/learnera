@@ -1,0 +1,38 @@
+:host {
+    background: rgb(37,37,38);
+    color: white;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+b {
+    position: relative;
+    margin-top: 21px;
+    padding-left: 30px;
+}
+
+.header-container {
+    width: 100%;
+    height: 100%;
+
+    .search-container {
+        margin-top:2px;
+        width: 100%;
+        height: 100%;
+        margin-left: 5%;
+        margin-right: 15px;
+    }
+    .menu-container {
+        margin-top:12px;
+        padding-right: 5px;
+        button
+        {
+            margin-right: 9px;
+            transform: scale(1.3);
+            mat-icon{
+                transform: scale(1.6);
+            }
+        }
+    }
+}

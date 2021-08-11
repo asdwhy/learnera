@@ -1,0 +1,30 @@
+<div mat-dialog-content>
+  <app-required-label [value]="'Enter the title of the conference'"></app-required-label>
+  <mat-form-field class="title-input-form" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="content.title">
+  </mat-form-field>
+  <app-required-label [value]="'Enter the Zoom link of the conference'"></app-required-label>
+  <mat-form-field class="title-input-form" appearance="fill">
+    <mat-label>Zoom Link</mat-label>
+    <input matInput class="title-input-form" [(ngModel)]="content.zoomLink">
+  </mat-form-field>
+  <app-required-label [value]="'Enter the meeting ID of the conference'"></app-required-label>
+  <mat-form-field class="title-input-form" appearance="fill">
+    <mat-label>Meeting ID</mat-label>
+    <input matInput class="title-input-form" [(ngModel)]="content.meetingId">
+  </mat-form-field>
+  <app-required-label [value]="'Enter the passcode of the conference'"></app-required-label>
+  <mat-form-field class="title-input-form" appearance="fill">
+    <mat-label>Passcode</mat-label>
+    <input matInput class="title-input-form" [(ngModel)]="content.passcode">
+  </mat-form-field>
+  <app-required-label [value]="'Enter the date & time of the conference'"></app-required-label>
+  <dp-date-picker  class="conference-dp" theme="dp-material" mode="daytime" [(ngModel)]="content.date" [config]="datePickerConfig"></dp-date-picker>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="content" cdkFocusInitial [disabled] = "!content.title || !content.meetingId || !content.zoomLink || !content.passcode || !content.date" >Ok</button>
+</div>

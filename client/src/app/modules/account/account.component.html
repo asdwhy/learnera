@@ -1,0 +1,51 @@
+
+<div class="profile-card-container">
+    <mat-card class="profile-card" style="text-align: center;" *ngIf="this.currentUser != null">
+        <div class="profile-image-card ">
+            <img mat-card-avatar [src]="profileImageUrl" alt="User Avatar">
+        </div>
+        <mat-card-title>Your Profile</mat-card-title>
+        <form class="profile-form" #userForm="ngForm">
+            <div class="form-field" *ngIf="!this.isCompanyUser">
+                <mat-label>First Name:</mat-label>
+                <input [(ngModel)]="currentUser.firstName" name="firstName">
+            </div>
+            <div class="form-field" *ngIf="!this.isCompanyUser">
+                <mat-label>Last Name:</mat-label>
+                <input [(ngModel)]="currentUser.lastName" name="lastName">
+            </div>
+            <div class="form-field" *ngIf="!this.isCompanyUser">
+                <mat-label>Username:</mat-label>
+                <input [(ngModel)]="currentUser.username" name="username">
+            </div>
+            <div class="form-field" *ngIf="this.isCompanyUser">
+                <mat-label>Company name:</mat-label>
+                <input [(ngModel)]="currentUser.companyName" [disabled]="this.isCompanyUser" name="companyName">
+            </div>
+            <div class="form-field" *ngIf="this.isCompanyUser">
+                <mat-label>Website:</mat-label>
+
+                <input [(ngModel)]="currentUser.website" [disabled]="this.isCompanyUser" name="website">
+            </div>
+            <div class="form-field" *ngIf="this.isCompanyUser">
+                <mat-label>Phone:</mat-label>
+                <input  [(ngModel)]="currentUser.phone" [disabled]="this.isCompanyUser" name="phone">
+            </div>
+            <div class="form-field" *ngIf="this.isCompanyUser">
+                <mat-label>Address:</mat-label>
+                <input [ngModel]="currentUser.address | address" [disabled]="this.isCompanyUser" name="address">
+            </div>
+            <div class="form-field" >
+                <mat-label>Profile Image URL:</mat-label>
+                <input [(ngModel)]="currentUser.profileImageUrl" name="profileImageUrl">
+            </div>
+            <br>
+            
+        </form>
+        <div class="btn-tbl">
+            <button mat-raised-button class="form-control update-btn" color="accent" [disabled]="this.isCompanyUser" (click)="onClickUpdate()">Update</button>
+        </div>  
+
+    </mat-card>
+</div>
+<app-companies></app-companies>

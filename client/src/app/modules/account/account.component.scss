@@ -1,0 +1,45 @@
+@import "vars.scss";
+
+$width: 500px;
+
+:host {
+    display: block;
+    padding: 30px;
+}
+
+.profile-image-card{
+    margin-bottom: 1.5%;
+}
+
+.profile-card {
+    width: $width;
+    margin: auto;
+    margin-bottom: 30px;
+    
+
+    form {
+        display: table;
+        width: 100%;
+
+        .form-field {
+            display: table-row;
+
+            mat-label, input {
+                display: table-cell;
+                margin-bottom: 5px;
+                width: 25%;
+            }
+
+            input {
+                width: 90%;
+                color: black;
+            }
+        }
+    }
+}
+
+app-companies {
+    width: $width;
+    margin: auto;
+    margin-top: 30px;
+}
