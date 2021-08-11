@@ -1,3 +1,14 @@
+# Team Members
+| Full Name | Github |
+|-----------|--------|------------|-------|---------------------|------------------|
+|Joshua Carrasco Sousa | [Github](https://github.com/jarbihc) |
+|Nicholas Segovia | [Github](https://github.com/NickSego) |
+|Louis Scheffer V | [Github](https://github.com/loukos-scheffer) |
+|Jack McKinney | [Github](https://github.com/shine-spike) |
+|Tian Yue Dong | [Github](https://github.com/TianYueDong) |
+|Karampreet Daid | [Github](https://github.com/KaramDaid) |
+|Haiyang Gu | [Github](https://github.com/jgu508) |
+
 # Motivation and Project Description
 
 In our modern world, people who want to expand their business struggle to acquire the knowledge to create successful businesses, struggle to make a community around their business, and struggle to hire the right people. Our motivation is to solve these problems.
