@@ -1,7 +1,7 @@
 # Team Members
 | Full Name | Github|
 |-----------|--------|
-|Joshua Carrasco Sousa | [Github](https://github.com/jarbihc) |
+|Joshua Carrasco Sousa | [Github](https://github.com/asdwhy) |
 |Nicholas Segovia | [Github](https://github.com/NickSego) |
 |Louis Scheffer V | [Github](https://github.com/loukos-scheffer) |
 |Jack McKinney | [Github](https://github.com/shine-spike) |
