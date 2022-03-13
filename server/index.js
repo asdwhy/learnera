@@ -5,7 +5,7 @@ const config = require('config');
 const app = express();
 
 // Allows CORS requests from CORS_ORIGIN
-if(process.env.NODE_ENV === "production") {
+if(process.env.NODE_ENV === "production" && config.get("CORS_ENABLED")) {
     app.use((req, res, next) => {
         res.setHeader('Access-Control-Allow-Origin', config.get("CORS_ORIGIN"));
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
